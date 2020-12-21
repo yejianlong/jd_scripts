@@ -8,9 +8,17 @@
 // 同一个京东账号的好友互助码用@符号隔开,不同京东账号之间用&符号或者换行隔开,下面给一个示例
 // 如: 京东账号1的shareCode1@京东账号1的shareCode2&京东账号2的shareCode1@京东账号2的shareCode2
 let shareCodes = [
-  'V5LkjP4WRyjeCKR9VRwcRX0bBuTz7MEK0-E99EJ7u0k=@Bo-jnVs_m9uBvbRzraXcSA==@-OvElMzqeyeGBWazWYjI1Q==',//账号一的好友shareCode,不同好友中间用@符号隔开
-  '1uzRU5HkaUgvy0AB5Q9VUg==@PDPM257r_KuQhil2Y7koNw==@-OvElMzqeyeGBWazWYjI1Q==',//账号二的好友shareCode，不同好友中间用@符号隔开
-]
+  "lsXmJ7Qiv3RBkAbH-YZa-A==@Scf5FS7nITPit3HEjAYBOg==@2F01gLPEDBEm6189_djDHA==@cZmFSE_Ytctpk4QDMFjwyA==@RnfdE4xf5iPkRxE9ekhEKA==@iNF3G_MAfdSi5_8cZQZPLQ==@Rp4_fBT_QKaUcGsVclh4CA==@ZIGx7HoBS9nccsxVAKOzZg==",
+  "lsXmJ7Qiv3RBkAbH-YZa-A==@Scf5FS7nITPit3HEjAYBOg==@2F01gLPEDBEm6189_djDHA==@cZmFSE_Ytctpk4QDMFjwyA==@RnfdE4xf5iPkRxE9ekhEKA==@iNF3G_MAfdSi5_8cZQZPLQ==@Rp4_fBT_QKaUcGsVclh4CA==@ZIGx7HoBS9nccsxVAKOzZg==",
+  "lsXmJ7Qiv3RBkAbH-YZa-A==@Scf5FS7nITPit3HEjAYBOg==@2F01gLPEDBEm6189_djDHA==@cZmFSE_Ytctpk4QDMFjwyA==@RnfdE4xf5iPkRxE9ekhEKA==@iNF3G_MAfdSi5_8cZQZPLQ==@Rp4_fBT_QKaUcGsVclh4CA==@ZIGx7HoBS9nccsxVAKOzZg==",
+  "lsXmJ7Qiv3RBkAbH-YZa-A==@Scf5FS7nITPit3HEjAYBOg==@2F01gLPEDBEm6189_djDHA==@cZmFSE_Ytctpk4QDMFjwyA==@RnfdE4xf5iPkRxE9ekhEKA==@iNF3G_MAfdSi5_8cZQZPLQ==@Rp4_fBT_QKaUcGsVclh4CA==@ZIGx7HoBS9nccsxVAKOzZg==",
+  "lsXmJ7Qiv3RBkAbH-YZa-A==@Scf5FS7nITPit3HEjAYBOg==@2F01gLPEDBEm6189_djDHA==@cZmFSE_Ytctpk4QDMFjwyA==@RnfdE4xf5iPkRxE9ekhEKA==@iNF3G_MAfdSi5_8cZQZPLQ==@Rp4_fBT_QKaUcGsVclh4CA==@ZIGx7HoBS9nccsxVAKOzZg==",
+  "lsXmJ7Qiv3RBkAbH-YZa-A==@Scf5FS7nITPit3HEjAYBOg==@2F01gLPEDBEm6189_djDHA==@cZmFSE_Ytctpk4QDMFjwyA==@RnfdE4xf5iPkRxE9ekhEKA==@iNF3G_MAfdSi5_8cZQZPLQ==@Rp4_fBT_QKaUcGsVclh4CA==@ZIGx7HoBS9nccsxVAKOzZg==",
+  "lsXmJ7Qiv3RBkAbH-YZa-A==@Scf5FS7nITPit3HEjAYBOg==@2F01gLPEDBEm6189_djDHA==@cZmFSE_Ytctpk4QDMFjwyA==@RnfdE4xf5iPkRxE9ekhEKA==@iNF3G_MAfdSi5_8cZQZPLQ==@Rp4_fBT_QKaUcGsVclh4CA==@ZIGx7HoBS9nccsxVAKOzZg==",
+  "lsXmJ7Qiv3RBkAbH-YZa-A==@Scf5FS7nITPit3HEjAYBOg==@2F01gLPEDBEm6189_djDHA==@cZmFSE_Ytctpk4QDMFjwyA==@RnfdE4xf5iPkRxE9ekhEKA==@iNF3G_MAfdSi5_8cZQZPLQ==@Rp4_fBT_QKaUcGsVclh4CA==@ZIGx7HoBS9nccsxVAKOzZg==",
+  "lsXmJ7Qiv3RBkAbH-YZa-A==@Scf5FS7nITPit3HEjAYBOg==@2F01gLPEDBEm6189_djDHA==@cZmFSE_Ytctpk4QDMFjwyA==@RnfdE4xf5iPkRxE9ekhEKA==@iNF3G_MAfdSi5_8cZQZPLQ==@Rp4_fBT_QKaUcGsVclh4CA==@ZIGx7HoBS9nccsxVAKOzZg==",
+  "lsXmJ7Qiv3RBkAbH-YZa-A==@Scf5FS7nITPit3HEjAYBOg==@2F01gLPEDBEm6189_djDHA==@cZmFSE_Ytctpk4QDMFjwyA==@RnfdE4xf5iPkRxE9ekhEKA==@iNF3G_MAfdSi5_8cZQZPLQ==@Rp4_fBT_QKaUcGsVclh4CA==@ZIGx7HoBS9nccsxVAKOzZg=="
+];
 // 判断github action里面是否有东东萌宠互助码
 if (process.env.DREAM_FACTORY_SHARE_CODES) {
   if (process.env.DREAM_FACTORY_SHARE_CODES.indexOf('&') > -1) {
