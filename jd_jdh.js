@@ -39,7 +39,12 @@ if ($.isNode()) {
   cookiesArr.reverse();
 }
 const JD_API_HOST = 'https://api.m.jd.com/api';
-$.newShareCodes = ['21d9b4b51a69839577027beb0aad5105', '8edbdfa148e78f028496cff17e7df35b'];
+$.newShareCodes = [
+  "3e9c9cb3969989f8f20f63ae1cfeb8df",
+  "51882a697894d2ec45df30fb6fd0ba48",
+  "dc52077c358f220b164985640d424915",
+  "08b052fad5e918b0fed5e2788b1af3cd",
+];
 !(async () => {
   if (!cookiesArr[0]) {
     $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/', {"open-url": "https://bean.m.jd.com/"});
