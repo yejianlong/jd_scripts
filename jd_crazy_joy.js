@@ -33,7 +33,15 @@ let helpSelf = false // 循环助力
 let applyJdBean = 0
 let cookiesArr = [], cookie = '', message = '';
 const inviteCodes = [
-  "AA"
+  "Su-1kta6UQYMwVlH1KK0KQ==@uDGdY6CtkLNgO7ZbgpavyKt9zd5YaBeE@y3MSpOrfpxiyfldrncXG7g==@AwOcChofSFBKJa-Ttal-hw==@dTgTttp53w_yozlveSubpA==@IGXv7I8BbL7dGaOrG6vk76t9zd5YaBeE@jBcyjDVc0OWsc-bEqAGnAg==@8SVcFNrx8XKBYDoaddLuXQ==",
+  "Su-1kta6UQYMwVlH1KK0KQ==@uDGdY6CtkLNgO7ZbgpavyKt9zd5YaBeE@y3MSpOrfpxiyfldrncXG7g==@AwOcChofSFBKJa-Ttal-hw==@dTgTttp53w_yozlveSubpA==@IGXv7I8BbL7dGaOrG6vk76t9zd5YaBeE@jBcyjDVc0OWsc-bEqAGnAg==@8SVcFNrx8XKBYDoaddLuXQ==",
+  "Su-1kta6UQYMwVlH1KK0KQ==@uDGdY6CtkLNgO7ZbgpavyKt9zd5YaBeE@y3MSpOrfpxiyfldrncXG7g==@AwOcChofSFBKJa-Ttal-hw==@dTgTttp53w_yozlveSubpA==@IGXv7I8BbL7dGaOrG6vk76t9zd5YaBeE@jBcyjDVc0OWsc-bEqAGnAg==@8SVcFNrx8XKBYDoaddLuXQ==",
+  "Su-1kta6UQYMwVlH1KK0KQ==@uDGdY6CtkLNgO7ZbgpavyKt9zd5YaBeE@y3MSpOrfpxiyfldrncXG7g==@AwOcChofSFBKJa-Ttal-hw==@dTgTttp53w_yozlveSubpA==@IGXv7I8BbL7dGaOrG6vk76t9zd5YaBeE@jBcyjDVc0OWsc-bEqAGnAg==@8SVcFNrx8XKBYDoaddLuXQ==",
+  "Su-1kta6UQYMwVlH1KK0KQ==@uDGdY6CtkLNgO7ZbgpavyKt9zd5YaBeE@y3MSpOrfpxiyfldrncXG7g==@AwOcChofSFBKJa-Ttal-hw==@dTgTttp53w_yozlveSubpA==@IGXv7I8BbL7dGaOrG6vk76t9zd5YaBeE@jBcyjDVc0OWsc-bEqAGnAg==@8SVcFNrx8XKBYDoaddLuXQ==",
+  "Su-1kta6UQYMwVlH1KK0KQ==@uDGdY6CtkLNgO7ZbgpavyKt9zd5YaBeE@y3MSpOrfpxiyfldrncXG7g==@AwOcChofSFBKJa-Ttal-hw==@dTgTttp53w_yozlveSubpA==@IGXv7I8BbL7dGaOrG6vk76t9zd5YaBeE@jBcyjDVc0OWsc-bEqAGnAg==@8SVcFNrx8XKBYDoaddLuXQ==",
+  "Su-1kta6UQYMwVlH1KK0KQ==@uDGdY6CtkLNgO7ZbgpavyKt9zd5YaBeE@y3MSpOrfpxiyfldrncXG7g==@AwOcChofSFBKJa-Ttal-hw==@dTgTttp53w_yozlveSubpA==@IGXv7I8BbL7dGaOrG6vk76t9zd5YaBeE@jBcyjDVc0OWsc-bEqAGnAg==@8SVcFNrx8XKBYDoaddLuXQ==",
+  "Su-1kta6UQYMwVlH1KK0KQ==@uDGdY6CtkLNgO7ZbgpavyKt9zd5YaBeE@y3MSpOrfpxiyfldrncXG7g==@AwOcChofSFBKJa-Ttal-hw==@dTgTttp53w_yozlveSubpA==@IGXv7I8BbL7dGaOrG6vk76t9zd5YaBeE@jBcyjDVc0OWsc-bEqAGnAg==@8SVcFNrx8XKBYDoaddLuXQ==",
+  "Su-1kta6UQYMwVlH1KK0KQ==@uDGdY6CtkLNgO7ZbgpavyKt9zd5YaBeE@y3MSpOrfpxiyfldrncXG7g==@AwOcChofSFBKJa-Ttal-hw==@dTgTttp53w_yozlveSubpA==@IGXv7I8BbL7dGaOrG6vk76t9zd5YaBeE@jBcyjDVc0OWsc-bEqAGnAg==@8SVcFNrx8XKBYDoaddLuXQ=="
 ];
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 if ($.isNode()) {
