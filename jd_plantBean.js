@@ -85,7 +85,13 @@ async function jdPlantBean() {
   await plantBeanIndex();
   // console.log(plantBeanIndexResult.data.taskList);
   if ($.plantBeanIndexResult.code === '0') {
-    const shareUrl = $.plantBeanIndexResult.data.jwordShareInfo.shareUrl
+
+    const shareUrl
+    try {
+      shareUrl = $.plantBeanIndexResult.data.jwordShareInfo.shareUrl
+    } catch(err) {
+      console.log(err)
+    }
     $.myPlantUuid = getParam(shareUrl, 'plantUuid')
     console.log(`\n【京东账号${$.index}（${$.nickName || $.UserName}）的${$.name}好友互助码】${$.myPlantUuid}\n`);
     roundList = $.plantBeanIndexResult.data.roundList;
