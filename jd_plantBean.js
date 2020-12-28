@@ -86,31 +86,32 @@ async function jdPlantBean() {
   // console.log(plantBeanIndexResult.data.taskList);
   if ($.plantBeanIndexResult.code === '0') {
 
-    const shareUrl
     try {
-      shareUrl = $.plantBeanIndexResult.data.jwordShareInfo.shareUrl
+      const shareUrl = $.plantBeanIndexResult.data.jwordShareInfo.shareUrl
+      $.myPlantUuid = getParam(shareUrl, 'plantUuid')
+      console.log(`\n【京东账号${$.index}（${$.nickName || $.UserName}）的${$.name}好友互助码】${$.myPlantUuid}\n`);
+      roundList = $.plantBeanIndexResult.data.roundList;
+      currentRoundId = roundList[1].roundId;//本期的roundId
+      lastRoundId = roundList[0].roundId;//上期的roundId
+      awardState = roundList[0].awardState;
+      $.taskList = $.plantBeanIndexResult.data.taskList;
+      subTitle = `【京东昵称】${$.plantBeanIndexResult.data.plantUserInfo.plantNickName}`;
+      message += `【上期时间】${roundList[0].dateDesc.replace('上期 ', '')}\n`;
+      message += `【上期成长值】${roundList[0].growth}\n`;
     } catch(err) {
       console.log(err)
+    } finally {
+      await receiveNutrients();//定时领取营养液
+      await doHelp();//助力
+      await doTask();//做日常任务
+      await doEgg();
+      await stealFriendWater();
+      await doCultureBean();
+      await doGetReward();
+      await showTaskProcess();
+      await plantShareSupportList();
     }
-    $.myPlantUuid = getParam(shareUrl, 'plantUuid')
-    console.log(`\n【京东账号${$.index}（${$.nickName || $.UserName}）的${$.name}好友互助码】${$.myPlantUuid}\n`);
-    roundList = $.plantBeanIndexResult.data.roundList;
-    currentRoundId = roundList[1].roundId;//本期的roundId
-    lastRoundId = roundList[0].roundId;//上期的roundId
-    awardState = roundList[0].awardState;
-    $.taskList = $.plantBeanIndexResult.data.taskList;
-    subTitle = `【京东昵称】${$.plantBeanIndexResult.data.plantUserInfo.plantNickName}`;
-    message += `【上期时间】${roundList[0].dateDesc.replace('上期 ', '')}\n`;
-    message += `【上期成长值】${roundList[0].growth}\n`;
-    await receiveNutrients();//定时领取营养液
-    await doHelp();//助力
-    await doTask();//做日常任务
-    await doEgg();
-    await stealFriendWater();
-    await doCultureBean();
-    await doGetReward();
-    await showTaskProcess();
-    await plantShareSupportList();
+
   } else {
     console.log(`种豆得豆-初始失败:  ${JSON.stringify($.plantBeanIndexResult)}`);
   }
