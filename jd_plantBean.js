@@ -101,19 +101,15 @@ async function jdPlantBean() {
     } catch(err) {
       console.log(err)
     } finally {
-      try {
-        await receiveNutrients();//定时领取营养液
-        await doHelp();//助力
-        await doTask();//做日常任务
-        await doEgg();
-        await stealFriendWater();
-        await doCultureBean();
-        await doGetReward();
-        await showTaskProcess();
-        await plantShareSupportList();
-      } catch(err) {
-        console.log(err)
-      } finally { }
+      await receiveNutrients();//定时领取营养液
+      await doHelp();//助力
+      await doTask();//做日常任务
+      await doEgg();
+      await stealFriendWater();
+      await doCultureBean();
+      await doGetReward();
+      await showTaskProcess();
+      await plantShareSupportList();
     }
 
   } else {
