@@ -8,16 +8,16 @@
 // 同一个京东账号的好友互助码用@符号隔开,不同京东账号之间用&符号或者换行隔开,下面给一个示例
 // 如: 京东账号1的shareCode1@京东账号1的shareCode2&京东账号2的shareCode1@京东账号2的shareCode2
 let shareCodes = [
-  "lsXmJ7Qiv3RBkAbH-YZa-A==@Scf5FS7nITPit3HEjAYBOg==@2F01gLPEDBEm6189_djDHA==@cZmFSE_Ytctpk4QDMFjwyA==@RnfdE4xf5iPkRxE9ekhEKA==@iNF3G_MAfdSi5_8cZQZPLQ==@Rp4_fBT_QKaUcGsVclh4CA==@ZIGx7HoBS9nccsxVAKOzZg==",
-  "lsXmJ7Qiv3RBkAbH-YZa-A==@Scf5FS7nITPit3HEjAYBOg==@2F01gLPEDBEm6189_djDHA==@cZmFSE_Ytctpk4QDMFjwyA==@RnfdE4xf5iPkRxE9ekhEKA==@iNF3G_MAfdSi5_8cZQZPLQ==@Rp4_fBT_QKaUcGsVclh4CA==@ZIGx7HoBS9nccsxVAKOzZg==",
-  "lsXmJ7Qiv3RBkAbH-YZa-A==@Scf5FS7nITPit3HEjAYBOg==@2F01gLPEDBEm6189_djDHA==@cZmFSE_Ytctpk4QDMFjwyA==@RnfdE4xf5iPkRxE9ekhEKA==@iNF3G_MAfdSi5_8cZQZPLQ==@Rp4_fBT_QKaUcGsVclh4CA==@ZIGx7HoBS9nccsxVAKOzZg==",
-  "lsXmJ7Qiv3RBkAbH-YZa-A==@Scf5FS7nITPit3HEjAYBOg==@2F01gLPEDBEm6189_djDHA==@cZmFSE_Ytctpk4QDMFjwyA==@RnfdE4xf5iPkRxE9ekhEKA==@iNF3G_MAfdSi5_8cZQZPLQ==@Rp4_fBT_QKaUcGsVclh4CA==@ZIGx7HoBS9nccsxVAKOzZg==",
-  "lsXmJ7Qiv3RBkAbH-YZa-A==@Scf5FS7nITPit3HEjAYBOg==@2F01gLPEDBEm6189_djDHA==@cZmFSE_Ytctpk4QDMFjwyA==@RnfdE4xf5iPkRxE9ekhEKA==@iNF3G_MAfdSi5_8cZQZPLQ==@Rp4_fBT_QKaUcGsVclh4CA==@ZIGx7HoBS9nccsxVAKOzZg==",
-  "lsXmJ7Qiv3RBkAbH-YZa-A==@Scf5FS7nITPit3HEjAYBOg==@2F01gLPEDBEm6189_djDHA==@cZmFSE_Ytctpk4QDMFjwyA==@RnfdE4xf5iPkRxE9ekhEKA==@iNF3G_MAfdSi5_8cZQZPLQ==@Rp4_fBT_QKaUcGsVclh4CA==@ZIGx7HoBS9nccsxVAKOzZg==",
-  "lsXmJ7Qiv3RBkAbH-YZa-A==@Scf5FS7nITPit3HEjAYBOg==@2F01gLPEDBEm6189_djDHA==@cZmFSE_Ytctpk4QDMFjwyA==@RnfdE4xf5iPkRxE9ekhEKA==@iNF3G_MAfdSi5_8cZQZPLQ==@Rp4_fBT_QKaUcGsVclh4CA==@ZIGx7HoBS9nccsxVAKOzZg==",
-  "lsXmJ7Qiv3RBkAbH-YZa-A==@Scf5FS7nITPit3HEjAYBOg==@2F01gLPEDBEm6189_djDHA==@cZmFSE_Ytctpk4QDMFjwyA==@RnfdE4xf5iPkRxE9ekhEKA==@iNF3G_MAfdSi5_8cZQZPLQ==@Rp4_fBT_QKaUcGsVclh4CA==@ZIGx7HoBS9nccsxVAKOzZg==",
-  "lsXmJ7Qiv3RBkAbH-YZa-A==@Scf5FS7nITPit3HEjAYBOg==@2F01gLPEDBEm6189_djDHA==@cZmFSE_Ytctpk4QDMFjwyA==@RnfdE4xf5iPkRxE9ekhEKA==@iNF3G_MAfdSi5_8cZQZPLQ==@Rp4_fBT_QKaUcGsVclh4CA==@ZIGx7HoBS9nccsxVAKOzZg==",
-  "lsXmJ7Qiv3RBkAbH-YZa-A==@Scf5FS7nITPit3HEjAYBOg==@2F01gLPEDBEm6189_djDHA==@cZmFSE_Ytctpk4QDMFjwyA==@RnfdE4xf5iPkRxE9ekhEKA==@iNF3G_MAfdSi5_8cZQZPLQ==@Rp4_fBT_QKaUcGsVclh4CA==@ZIGx7HoBS9nccsxVAKOzZg=="
+  "lsXmJ7Qiv3RBkAbH-YZa-A==@Scf5FS7nITPit3HEjAYBOg==@2F01gLPEDBEm6189_djDHA==@cZmFSE_Ytctpk4QDMFjwyA==@RnfdE4xf5iPkRxE9ekhEKA==@iNF3G_MAfdSi5_8cZQZPLQ==@Rp4_fBT_QKaUcGsVclh4CA==@ZIGx7HoBS9nccsxVAKOzZg==@6fmbTvWO_FzOSFXqqmHwdg==",
+  "lsXmJ7Qiv3RBkAbH-YZa-A==@Scf5FS7nITPit3HEjAYBOg==@2F01gLPEDBEm6189_djDHA==@cZmFSE_Ytctpk4QDMFjwyA==@RnfdE4xf5iPkRxE9ekhEKA==@iNF3G_MAfdSi5_8cZQZPLQ==@Rp4_fBT_QKaUcGsVclh4CA==@ZIGx7HoBS9nccsxVAKOzZg==@6fmbTvWO_FzOSFXqqmHwdg==",
+  "lsXmJ7Qiv3RBkAbH-YZa-A==@Scf5FS7nITPit3HEjAYBOg==@2F01gLPEDBEm6189_djDHA==@cZmFSE_Ytctpk4QDMFjwyA==@RnfdE4xf5iPkRxE9ekhEKA==@iNF3G_MAfdSi5_8cZQZPLQ==@Rp4_fBT_QKaUcGsVclh4CA==@ZIGx7HoBS9nccsxVAKOzZg==@6fmbTvWO_FzOSFXqqmHwdg==",
+  "lsXmJ7Qiv3RBkAbH-YZa-A==@Scf5FS7nITPit3HEjAYBOg==@2F01gLPEDBEm6189_djDHA==@cZmFSE_Ytctpk4QDMFjwyA==@RnfdE4xf5iPkRxE9ekhEKA==@iNF3G_MAfdSi5_8cZQZPLQ==@Rp4_fBT_QKaUcGsVclh4CA==@ZIGx7HoBS9nccsxVAKOzZg==@6fmbTvWO_FzOSFXqqmHwdg==",
+  "lsXmJ7Qiv3RBkAbH-YZa-A==@Scf5FS7nITPit3HEjAYBOg==@2F01gLPEDBEm6189_djDHA==@cZmFSE_Ytctpk4QDMFjwyA==@RnfdE4xf5iPkRxE9ekhEKA==@iNF3G_MAfdSi5_8cZQZPLQ==@Rp4_fBT_QKaUcGsVclh4CA==@ZIGx7HoBS9nccsxVAKOzZg==@6fmbTvWO_FzOSFXqqmHwdg==",
+  "lsXmJ7Qiv3RBkAbH-YZa-A==@Scf5FS7nITPit3HEjAYBOg==@2F01gLPEDBEm6189_djDHA==@cZmFSE_Ytctpk4QDMFjwyA==@RnfdE4xf5iPkRxE9ekhEKA==@iNF3G_MAfdSi5_8cZQZPLQ==@Rp4_fBT_QKaUcGsVclh4CA==@ZIGx7HoBS9nccsxVAKOzZg==@6fmbTvWO_FzOSFXqqmHwdg==",
+  "lsXmJ7Qiv3RBkAbH-YZa-A==@Scf5FS7nITPit3HEjAYBOg==@2F01gLPEDBEm6189_djDHA==@cZmFSE_Ytctpk4QDMFjwyA==@RnfdE4xf5iPkRxE9ekhEKA==@iNF3G_MAfdSi5_8cZQZPLQ==@Rp4_fBT_QKaUcGsVclh4CA==@ZIGx7HoBS9nccsxVAKOzZg==@6fmbTvWO_FzOSFXqqmHwdg==",
+  "lsXmJ7Qiv3RBkAbH-YZa-A==@Scf5FS7nITPit3HEjAYBOg==@2F01gLPEDBEm6189_djDHA==@cZmFSE_Ytctpk4QDMFjwyA==@RnfdE4xf5iPkRxE9ekhEKA==@iNF3G_MAfdSi5_8cZQZPLQ==@Rp4_fBT_QKaUcGsVclh4CA==@ZIGx7HoBS9nccsxVAKOzZg==@6fmbTvWO_FzOSFXqqmHwdg==",
+  "lsXmJ7Qiv3RBkAbH-YZa-A==@Scf5FS7nITPit3HEjAYBOg==@2F01gLPEDBEm6189_djDHA==@cZmFSE_Ytctpk4QDMFjwyA==@RnfdE4xf5iPkRxE9ekhEKA==@iNF3G_MAfdSi5_8cZQZPLQ==@Rp4_fBT_QKaUcGsVclh4CA==@ZIGx7HoBS9nccsxVAKOzZg==@6fmbTvWO_FzOSFXqqmHwdg==",
+  "lsXmJ7Qiv3RBkAbH-YZa-A==@Scf5FS7nITPit3HEjAYBOg==@2F01gLPEDBEm6189_djDHA==@cZmFSE_Ytctpk4QDMFjwyA==@RnfdE4xf5iPkRxE9ekhEKA==@iNF3G_MAfdSi5_8cZQZPLQ==@Rp4_fBT_QKaUcGsVclh4CA==@ZIGx7HoBS9nccsxVAKOzZg==@6fmbTvWO_FzOSFXqqmHwdg=="
 ];
 // 判断github action里面是否有东东萌宠互助码
 if (process.env.DREAM_FACTORY_SHARE_CODES) {
