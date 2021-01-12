@@ -29,8 +29,17 @@ let cookiesArr = [], cookie = '', message;
 let helpAuthor = true;
 const randomCount = $.isNode() ? 20 : 5;
 const inviteCodes = [
-  `-4msulYas0O2JsRhE-2TA5XZmBQ@eU9Yar_mb_9z92_WmXNG0w@eU9YaO7jMvwh-W_VzyUX0Q`,
-  `-4msulYas0O2JsRhE-2TA5XZmBQ@eU9Yar_mb_9z92_WmXNG0w@eU9YaO7jMvwh-W_VzyUX0Q`
+  `eU9Yaem2Za1zpW_TzSVB1g@eU9Ya-63Z69z8mmEnnZC0A@IRk1ZOWzYPl6uzM@eU9YG4nXF4BerT29rCVJ@eU9Ya-2zMv5woj_RynFC0w@eU9YPpbNLr1Ahy2hqhB6@ZE9jLKbOBbRZkyipvCw@ZE9jLKbOBbRZkyipvCw`,
+  `eU9Yaem2Za1zpW_TzSVB1g@eU9Ya-63Z69z8mmEnnZC0A@IRk1ZOWzYPl6uzM@eU9YG4nXF4BerT29rCVJ@eU9Ya-2zMv5woj_RynFC0w@eU9YPpbNLr1Ahy2hqhB6@ZE9jLKbOBbRZkyipvCw@ZE9jLKbOBbRZkyipvCw`,
+  `eU9Yaem2Za1zpW_TzSVB1g@eU9Ya-63Z69z8mmEnnZC0A@IRk1ZOWzYPl6uzM@eU9YG4nXF4BerT29rCVJ@eU9Ya-2zMv5woj_RynFC0w@eU9YPpbNLr1Ahy2hqhB6@ZE9jLKbOBbRZkyipvCw@ZE9jLKbOBbRZkyipvCw`,
+  `eU9Yaem2Za1zpW_TzSVB1g@eU9Ya-63Z69z8mmEnnZC0A@IRk1ZOWzYPl6uzM@eU9YG4nXF4BerT29rCVJ@eU9Ya-2zMv5woj_RynFC0w@eU9YPpbNLr1Ahy2hqhB6@ZE9jLKbOBbRZkyipvCw@ZE9jLKbOBbRZkyipvCw`,
+  `eU9Yaem2Za1zpW_TzSVB1g@eU9Ya-63Z69z8mmEnnZC0A@IRk1ZOWzYPl6uzM@eU9YG4nXF4BerT29rCVJ@eU9Ya-2zMv5woj_RynFC0w@eU9YPpbNLr1Ahy2hqhB6@ZE9jLKbOBbRZkyipvCw@ZE9jLKbOBbRZkyipvCw`,
+  `eU9Yaem2Za1zpW_TzSVB1g@eU9Ya-63Z69z8mmEnnZC0A@IRk1ZOWzYPl6uzM@eU9YG4nXF4BerT29rCVJ@eU9Ya-2zMv5woj_RynFC0w@eU9YPpbNLr1Ahy2hqhB6@ZE9jLKbOBbRZkyipvCw@ZE9jLKbOBbRZkyipvCw`,
+  `eU9Yaem2Za1zpW_TzSVB1g@eU9Ya-63Z69z8mmEnnZC0A@IRk1ZOWzYPl6uzM@eU9YG4nXF4BerT29rCVJ@eU9Ya-2zMv5woj_RynFC0w@eU9YPpbNLr1Ahy2hqhB6@ZE9jLKbOBbRZkyipvCw@ZE9jLKbOBbRZkyipvCw`,
+  `eU9Yaem2Za1zpW_TzSVB1g@eU9Ya-63Z69z8mmEnnZC0A@IRk1ZOWzYPl6uzM@eU9YG4nXF4BerT29rCVJ@eU9Ya-2zMv5woj_RynFC0w@eU9YPpbNLr1Ahy2hqhB6@ZE9jLKbOBbRZkyipvCw@ZE9jLKbOBbRZkyipvCw`,
+  `eU9Yaem2Za1zpW_TzSVB1g@eU9Ya-63Z69z8mmEnnZC0A@IRk1ZOWzYPl6uzM@eU9YG4nXF4BerT29rCVJ@eU9Ya-2zMv5woj_RynFC0w@eU9YPpbNLr1Ahy2hqhB6@ZE9jLKbOBbRZkyipvCw@ZE9jLKbOBbRZkyipvCw`,
+  `eU9Yaem2Za1zpW_TzSVB1g@eU9Ya-63Z69z8mmEnnZC0A@IRk1ZOWzYPl6uzM@eU9YG4nXF4BerT29rCVJ@eU9Ya-2zMv5woj_RynFC0w@eU9YPpbNLr1Ahy2hqhB6@ZE9jLKbOBbRZkyipvCw@ZE9jLKbOBbRZkyipvCw`,
+  `eU9Yaem2Za1zpW_TzSVB1g@eU9Ya-63Z69z8mmEnnZC0A@IRk1ZOWzYPl6uzM@eU9YG4nXF4BerT29rCVJ@eU9Ya-2zMv5woj_RynFC0w@eU9YPpbNLr1Ahy2hqhB6@ZE9jLKbOBbRZkyipvCw@ZE9jLKbOBbRZkyipvCw`,
 ]
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
