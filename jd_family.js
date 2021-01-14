@@ -4,27 +4,7 @@
  * @Last Modified by:   shylocks
  * @Last Modified time: 2021-01-13 13:27:41
  */
-/*
-京东家庭号
-活动入口：玩一玩-家庭号
-8000幸福值可换100京豆，一天任务做完大概300幸福值，周期较长
-已支持IOS双京东账号,Node.js支持N个京东账号
-脚本兼容: QuantumultX, Surge, Loon, JSBox, Node.js
-============Quantumultx===============
-[task_local]
-#京东家庭号
-1 0,8,12,16 * * * https://raw.githubusercontent.com/shylocks/Loon/main/jd_family.js, tag=京东家庭号, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jd_family.png, enabled=true
 
-================Loon==============
-[Script]
-cron "1 0,8,12,16 * * *" script-path=https://raw.githubusercontent.com/shylocks/Loon/main/jd_family.js,tag=京东家庭号
-
-===============Surge=================
-京东家庭号 = type=cron,cronexp="1 0,8,12,16 * * *",wake-system=1,timeout=20,script-path=https://raw.githubusercontent.com/shylocks/Loon/main/jd_family.js
-
-============小火箭=========
-京东家庭号 = type=cron,script-path=https://raw.githubusercontent.com/shylocks/Loon/main/jd_family.js, cronexpr="1 8,12,18* * *", timeout=200, enable=true
- */
 const $ = new Env('京东家庭号');
 const notify = $.isNode() ? require('./sendNotify') : '';
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
@@ -73,11 +53,7 @@ if ($.isNode()) {
         }
         continue
       }
-      // await jdFamily()
-      while (true) {
-        await $.wait(31000)
-        await jdFamily()
-      }
+      await jdFamily()
     }
   }
 })()
@@ -98,7 +74,7 @@ async function jdFamily() {
 function showMsg() {
   return new Promise(resolve => {
     // message += `本次运行获得${$.beans}京豆`
-    $.msg($.name, '', `京东账号${$.index}${$.nickName}\n${message}`);
+    $.log($.name, '', `京东账号${$.index}${$.nickName}\n${message}`);
     resolve()
   })
 }
