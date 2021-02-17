@@ -1,6 +1,6 @@
 /*
 京东摇钱树 ：https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_moneyTree.js
-更新时间：2020-11-07
+更新时间：2020-11-16
 京东摇钱树支持京东双账号
 注：如果使用Node.js, 需自行安装'crypto-js,got,http-server,tough-cookie'模块. 例: npm install crypto-js http-server tough-cookie got --save
 */
@@ -30,7 +30,6 @@ if ($.isNode()) {
   cookiesArr.push($.getdata('CookieJD2'));
 }
 
-const Notice = $.getdata('jdMoneyTreeNoticeTimes') * 1 || 2;//设置运行多少次才通知。默认运行两次脚本通知，其他设置请在BoxJs进行设置
 let jdNotify = true;//是否开启静默运行，默认true开启
 const JD_API_HOST = 'https://ms.jr.jd.com/gw/generic/uc/h5/m';
 let userInfo = null, taskInfo = [], message = '', subTitle = '', fruitTotal = 0;
@@ -49,8 +48,12 @@ let userInfo = null, taskInfo = [], message = '', subTitle = '', fruitTotal = 0;
       console.log(`\n开始【京东账号${$.index}】${$.nickName || $.UserName}\n`);
       if (!$.isLogin) {
         $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/`, {"open-url": "https://bean.m.jd.com/"});
-        $.setdata('', `CookieJD${i ? i + 1 : "" }`);//cookie失效，故清空cookie。
-        if ($.isNode()) await notify.sendNotify(`${$.name}cookie已失效 - ${$.UserName}`, `京东账号${$.index} ${$.UserName}\n请重新登录获取cookie`);
+
+        if ($.isNode()) {
+          await notify.sendNotify(`${$.name}cookie已失效 - ${$.UserName}`, `京东账号${$.index} ${$.UserName}\n请重新登录获取cookie`);
+        } else {
+          $.setdata('', `CookieJD${i ? i + 1 : "" }`);//cookie失效，故清空cookie。$.setdata('', `CookieJD${i ? i + 1 : "" }`);//cookie失效，故清空cookie。
+        }
         continue
       }
       message = '';
@@ -74,18 +77,10 @@ async function jd_moneyTree() {
   await sell();
   await myWealth();
   await stealFriendFruit()
-  await msgControl();
 
-  console.log(`运行脚本次数和设置的次数是否相等::${($.getdata($.treeMsgTime) * 1) === Notice}`);
-  jdNotify = $.getdata('jdMoneyTreeNotify') ? $.getdata('jdMoneyTreeNotify') : jdNotify;
-  console.log(`box订阅静默运行-是否打开::${jdNotify || jdNotify === 'true'}`);
-  console.log(`是否弹窗通知::${(($.getdata($.treeMsgTime) * 1) === Notice) && (!jdNotify || jdNotify === 'false')}`);
   $.log(`\n${message}\n`);
   if (!jdNotify || jdNotify === 'false') {
-    if (($.getdata($.treeMsgTime) * 1) === Notice) {
-      $.msg($.name, subTitle, message);
-      $.setdata('0', $.treeMsgTime);
-    }
+    $.msg($.name, subTitle, message);
   }
 }
 function user_info() {
@@ -115,15 +110,8 @@ function user_info() {
                 userInfo = res.resultData.data;
                 // userInfo.realName = null;
                 if (userInfo.realName) {
-                  console.log(`助力码sharePin为：：${userInfo.sharePin}`);
+                  // console.log(`助力码sharePin为：：${userInfo.sharePin}`);
                   $.treeMsgTime = userInfo.sharePin;
-                  if ($.getdata($.treeMsgTime)) {
-                    if ($.getdata($.treeMsgTime) >= Notice) {
-                      $.setdata('0', $.treeMsgTime);
-                    }
-                  } else {
-                    $.setdata('0', $.treeMsgTime);
-                  }
                   subTitle = `【${userInfo.nick}】${userInfo.treeInfo.treeName}`;
                   // message += `【我的金果数量】${userInfo.treeInfo.fruit}\n`;
                   // message += `【我的金币数量】${userInfo.treeInfo.coin}\n`;

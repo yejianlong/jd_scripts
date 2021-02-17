@@ -1,4 +1,5 @@
 /**
+ 更新时间:2020-11-12
  从github@Zero-S1搬的[https://github.com/Zero-S1/JD_tools/blob/master/jbp.js]
 【宠汪汪聚宝盆辅助脚本】
 1、进入聚宝盆,显示本轮狗粮池投入总数,方便估算
