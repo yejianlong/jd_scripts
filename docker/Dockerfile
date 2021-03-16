@@ -1,23 +1,32 @@
 FROM alpine
-MAINTAINER Akira <e.akimoto.akira@gmail.com>
+LABEL AUTHOR="Akira <e.akimoto.akira@gmail.com>" \
+        VERSION=0.1.2 \
+        UPDATE_CONTENT="更新内容较多，重新阅读仓库[Readme](https://github.com/lxk0301/jd_scripts/tree/master/docker)，更新镜像并更新配置后使用。"
 
 RUN set -ex \
         && apk update && apk upgrade\
-        && apk add --no-cache tzdata git nodejs npm\
+        && apk add --no-cache tzdata moreutils git nodejs npm curl jq\
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone
 
-RUN git clone https://github.com/lxk0301/scripts /scripts \
+RUN git clone https://github.com/lxk0301/jd_scripts /scripts \
         && cd /scripts \
+        && git checkout master \
         && mkdir logs \
         && npm install \
-        && cd ~ \
+        && cd /tmp \
         && npm install request
 
-ENV CDN_JD_DAILYBONUS true
+ENV BUILD_VERSION=0.1.2 \
+    DEFAULT_LIST_FILE=crontab_list.sh \
+    CUSTOM_LIST_MERGE_TYPE=append
 
-RUN crontab /scripts/docker/crontab_list.sh
+# github action 构建    
+COPY ./docker/docker_entrypoint.sh /usr/local/bin
+# 本地构建
+# COPY ./docker_entrypoint.sh /usr/local/bin
+RUN chmod +x /usr/local/bin/docker_entrypoint.sh
 
 WORKDIR /scripts
 
-CMD ["node"]
+ENTRYPOINT ["docker_entrypoint.sh"]

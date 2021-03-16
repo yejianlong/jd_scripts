@@ -29,6 +29,7 @@ async function main() {
   if ($.body) {
     eval($.body);
   }
+  $.done()
 }
 function updateShareCodes(url = 'https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/jd/jd_lotteryMachine.js') {
   return new Promise(resolve => {
@@ -47,8 +48,8 @@ function updateShareCodes(url = 'https://raw.githubusercontent.com/yangtingxiao/
     })
   })
 }
-function updateShareCodesCDN(url = 'https://cdn.jsdelivr.net/gh/yangtingxiao/QuantumultX@master/scripts/jd/jd_lotteryMachine.js') {
-  return new Promise(resolve => {
+function updateShareCodesCDN(url = 'https://raw.fastgit.org/yangtingxiao/QuantumultX/master/scripts/jd/jd_lotteryMachine.js') {
+  return new Promise(async resolve => {
     $.get({url}, async (err, resp, data) => {
       try {
         if (err) {
@@ -63,6 +64,8 @@ function updateShareCodesCDN(url = 'https://cdn.jsdelivr.net/gh/yangtingxiao/Qua
         resolve();
       }
     })
+    await $.wait(3000)
+    resolve();
   })
 }
 
